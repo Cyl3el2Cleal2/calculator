@@ -56,13 +56,26 @@ body{
 
 #reText
 {
-font-size: 5pc;
-text-align: right;
-margin-left: 5%;
-margin-top: 5%;
-width: 90%;
-height: 120px;
-background-color: black;
-color: #00ff39;
+    font-size: 5pc;
+    text-align: right;
+    margin-left: 5%;
+    margin-top: 5%;
+    width: 90%;
+    height: 120px;
+    background-color: black;
+    color: #00ff39;
+
+}
+
+
+#foote{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    color: aqua;
+    width: 100%;
+    background-color: darkslategrey;
+    text-align: center;
+
 
 }
