@@ -1,47 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=
-    
-    
-    
     , initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Calculator</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
+
 <body>
-<div class="re" >
-    <button id="reText" >here</button>
-</div>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                clickclick($(this).text());
+            });
+        });
+    </script>
+    <div id="board">
+        <div class="re">
 
-<div class= "row1" >
-<span>    <button id="e1">7</button></span>
-<span>    <button id="e2">8</button></span>
-<span>    <button id="e3" >9</button></span>
-<span>    <button id="e4" >x</button></span>
-</div>
-<div class = "row2" >
-    <span>    <button id="e1" >4</button></span>
-    <span>    <button id="e2" >5</button></span>
-    <span>    <button id="e3" >6</button></span>
-    <span>    <button id="e4" >/</button></span>
-</div>
-<div class = "row3" >
-    <span>    <button id="e1">1</button></span>
-    <span>    <button id="e2">2</button></span>
-    <span>    <button id="e3">3</button></span>
-    <span>    <button id="e4">-</button></span>
-</div>
-<div class = "row4" >
-    <span>    <button id="e1">C</button></span>
-    <span>    <button id="e2">0</button></span>
-    <span>    <button id="e3">=</button></span>
-    <span>    <button id="e4">+</button></span>
-</div>
+            <input id="reText" type="submit" value="0">
+        </div>
+
+        <div id="butzone">
 
 
+            <div class="row1">
+                <span> <button id="e1">7</button></span>
+                <span> <button id="e2">8</button></span>
+                <span> <button id="e3">9</button></span>
+                <span> <button id="e4">x</button></span>
+            </div>
+
+            <div class="row2">
+                <span> <button id="e1">4</button></span>
+                <span> <button id="e2">5</button></span>
+                <span> <button id="e3">6</button></span>
+                <span> <button id="e4">/</button></span>
+            </div>
+
+            <div class="row3">
+                <span> <button id="e1">1</button></span>
+                <span> <button id="e2">2</button></span>
+                <span> <button id="e3">3</button></span>
+                <span> <button id="e4">-</button></span>
+            </div>
+
+            <div class="row4">
+                <span> <button id="e1">C</button></span>
+                <span> <button id="e2">0</button></span>
+                <span> <button id="e3">=</button></span>
+                <span> <button id="e4">+</button></span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        var value = 0;
+        var op = "";
+        function clickclick(p1) {
+            var old = document.getElementById("reText").value
+            if (p1 == "C") {
+                document.getElementById("reText").value = "0";
+                return;
+            }
+            if (p1 == "x") {
+                this.op = "x";
+                this.value = old;
+                document.getElementById("reText").value = "";
+                return;
+            }
+            if (p1 == "+") {
+                this.op = "+";
+                this.value = old;
+                document.getElementById("reText").value = "";
+                return;
+            }
+            if (p1 == "-") {
+                this.op = "-";
+                this.value = old;
+                document.getElementById("reText").value = "";
+                return;
+            }
+            if (p1 == "/") {
+                this.op = "/";
+                this.value = old;
+                document.getElementById("reText").value = "";
+                return;
+            }
+            if (p1 == "=") {
+                var result
+                if (this.op == "+") {
+                    result = Number(old) + Number(this.value)
+                }
+                if (this.op == "-") {
+                    result = this.value - old
+                }
+                if (this.op == "x") {
+                    result = old * this.value
+                }
+                if (this.op == "/") {
+                    result = this.value / old
+                }
+                document.getElementById("reText").value = result;
+                return;
+            } else {
+
+                if (old == 0) {
+                    old = "";
+                }
+
+                document.getElementById("reText").value = old + p1;
+            }
+
+        }
+
+
+    </script>
 
 </body>
+
 </html>
